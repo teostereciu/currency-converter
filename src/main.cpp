@@ -19,7 +19,6 @@ int main(int argc, const char * argv[]) {
         cin >> toCurr;
     } while (fromCurr != "EUR" && fromCurr != "USD" && fromCurr != "RON");
     
-    //double convRates[3][3] = {{1,1.06,4.93},{0.95,1,4.66},{0.2,0.21,1}};
     double convRates[3][3] = {{1,1.06,4.93},{0.95,1,4.66},{0.2,0.21,1}};
     int from=0, to=0;
     if (fromCurr == "EUR") {
@@ -31,14 +30,14 @@ int main(int argc, const char * argv[]) {
     }
 
     if (toCurr == "EUR") {
-        from = 0;
-    } else if (fromCurr == "USD") {
-        from = 1;
+        to = 0;
+    } else if (toCurr == "USD") {
+        to = 1;
     } else {
-        from = 2;
+        to = 2;
     }
     
     toVal = fromVal * convRates[from][to];
-    cout << fromVal << " " << fromCurr << " is " << toVal << " " << toCurr << ".\n";
+    cout << "\n" << fromVal << " " << fromCurr << " is " << toVal << " " << toCurr << ".\n";
     return 0;
 }
